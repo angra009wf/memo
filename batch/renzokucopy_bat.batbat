@@ -1,0 +1,18 @@
+SET DLPATH="D:\Program Files\salesforce.com\Data Loader"
+SET DLCONF="D:\Program Files\salesforce.com\Data Loader\cliq_process\Sample\config"
+SET DLDATA="D:\Program Files\salesforce.com\Data Loader\cliq_process\Sample\write"
+
+COPY /Y "read\a.csv" "read\Sample.csv"
+call :sub
+COPY /Y "read\b.csv" "read\Sample.csv"
+call :sub
+
+exit /b 1
+
+:sub
+call %DLPATH%\jre1.8.0_121\bin\java.exe -cp %DLPATH%\* -Dsalesforce.config.dir=%DLCONF% com.salesforce.dataloader.process.ProcessRunner process.name=Sample
+
+exit /b 2
+
+REM To rotate your export files, uncomment the line below
+REM copy %DLDATA%\Sample.csv %DLDATA%\%date:~10,4%%date:~7,2%%date:~4,2%-%time:~0,2%-Sample.csv
