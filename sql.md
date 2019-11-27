@@ -170,6 +170,11 @@ alter table trn_histories drop index trn_input_kbn
 alter table trn_histories MODIFY trn_histories_id int(11) DEFAULT NULL COMMENT '履歴ID'
 ```
 
+# カラム追加
+```
+alter table trn_histories add answer_flg tinyint(1) DEFAULT NULL after id COMMENT '回答フラグ'
+```
+
 # カラム名変更
 ```
 alter table trn_order change trn_order_name trn_order_no int(11) NOT NULL COMMENT '受注ID'
