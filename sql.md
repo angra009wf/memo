@@ -1,3 +1,12 @@
+# 【SQL】
+# テーブル定義出力
+```
+desc テーブル名
+desc mst_users;
+```
+
+---
+---
 # 【Oracle】
 # SYSDB接続方法
 ```
