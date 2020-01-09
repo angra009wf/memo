@@ -213,6 +213,15 @@ mysqldump -u root -pdev_pass db_dev > 20190521_db_dev.sql
 mysql -u root -pdev_pass -h XXXX db_dev < dump_trn_histories.sql
 ```
 
+# 本日日付の取得
+```
+SELECT NOW();
+2014-01-15 17:05:43
+
+SELECT CURDATE();
+2014-01-15
+```
+
 ---
 ---
 # 【PostgreSQL】
