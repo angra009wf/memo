@@ -181,7 +181,8 @@ alter table trn_histories MODIFY trn_histories_id int(11) DEFAULT NULL COMMENT '
 
 # カラム追加
 ```
-alter table trn_histories add answer_flg tinyint(1) DEFAULT NULL after id COMMENT '回答フラグ'
+alter table trn_histories add answer_flg tinyint(1) DEFAULT NULL COMMENT '回答フラグ' after id
+※afterは最後に書かないとエラーになる
 ```
 
 # カラム名変更
